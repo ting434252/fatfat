@@ -1,0 +1,50 @@
+<style>
+  .center{
+      text-align: center;
+   }
+</style>
+
+<div class="container center">
+
+<%= form_with(model: item, local: true) do |form| %>
+<% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= form.label :產品名稱 %>
+    <input %= form.text_field :item_name, id: :item_item_name %>
+    <br>
+    </div>
+  <div>
+    <%= form.label :分類 %>
+<!--    <%= form.text_field :sort_id, id: :item_sort_id %> -->
+     <%= form.collection_select(:sort_id, Sort.all, :id, :sort_name) %>
+  </div>
+  
+  
+  
+
+  <div class="actions">
+    <%= form.submit %>
+    <input type="button" value="返回" onclick="history.back()" class="btn btn-primary" color="white">
+  </div>
+
+
+<% end %>
+
+
+</div>
+
+
+
+

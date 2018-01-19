@@ -1,0 +1,33 @@
+<style>
+  .center{
+    text-align: center;
+  }
+</style>
+
+<div class="container center">
+  
+
+<p id="notice"><%= notice %></p>
+
+ <div class="form-group">
+   <label for="item">商品名稱</label>
+   <input type="text" class="form-control" id="item" value="<%= @purchase.item_id %>" style="weight: 100px">
+ </div>
+  <div class="form-group">
+   <label for="quantity">進貨數量</label>
+   <input type="text" class="form-control" id="quantity" value="<%= @purchase.purchase_quantity %>" style="weight: 100px">
+ </div>
+  <div class="form-group">
+   <label for="item">成本</label>
+   <input type="text" class="form-control" id="tiem" value="<%= @purchase.purchase_cost %>" style="weight: 100px">
+ </div>
+   <div class="form-group">
+   <label for="item">售價</label>
+   <input type="text" class="form-control" id="tiem" value="<%= @purchase.purchase_price %>" style="weight: 100px">
+ </div>
+
+
+<%= link_to "返回", purchases_path, class: "btn btn-primary", style: "color:white" %>
+  
+  </div>
+</div>
